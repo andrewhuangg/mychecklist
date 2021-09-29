@@ -12,6 +12,11 @@ const App = () => {
   const [itemStatus, setItemStatus] = useState('all');
   const [filteredListItems, setFilteredListItems] = useState([]);
 
+  // * run once on load
+  useEffect(() => {
+    fetchListLocalStorageHandler();
+  }, []);
+
   useEffect(() => {
     filterHandler();
     saveListLocalStorageHandler();
@@ -35,10 +40,15 @@ const App = () => {
 
   // Local storage
   const saveListLocalStorageHandler = () => {
+    localStorage.setItem('listItems', JSON.stringify(listItems));
+  };
+
+  const fetchListLocalStorageHandler = () => {
     if (localStorage.getItem('listItems') === null) {
       localStorage.setItem('listItems', JSON.stringify([]));
     } else {
-      localStorage.setItem('listItems', JSON.stringify(listItems));
+      const localListItems = JSON.parse(localStorage.getItem('listItems'));
+      setListItem(localListItems);
     }
   };
 
