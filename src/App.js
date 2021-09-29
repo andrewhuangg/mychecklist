@@ -6,6 +6,7 @@ import CheckList from './components/CheckList';
 const App = () => {
   const [listInput, setListInput] = useState('');
   const [listItems, setListItem] = useState([]);
+  const [itemStatus, setItemStatus] = useState('all');
 
   return (
     <>
@@ -18,8 +19,9 @@ const App = () => {
           setListItem={setListItem}
           listItems={listItems}
           listInput={listInput}
+          setItemStatus={setItemStatus}
         />
-        <CheckList />
+        <CheckList listItems={listItems} setListItem={setListItem} />
       </div>
     </>
   );

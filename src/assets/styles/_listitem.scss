@@ -1,0 +1,49 @@
+.listitem {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $fontLight;
+  background-color: $blockLight;
+  font-size: $fontSm;
+  transition: all 300s ease-in-out;
+  border: 1px solid $borderLight;
+
+  &--completed {
+    border: none;
+  }
+
+  &__li {
+    padding: 0 0.5rem;
+    flex: 1;
+
+    &--completed {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  }
+
+  &__cta {
+    height: 100%;
+    font-size: 1.5rem;
+    color: $fontLight;
+    border: none;
+    background-color: $buttonLight;
+    cursor: pointer;
+
+    &.complete {
+      margin-right: 1px;
+      background: $buttonDark;
+    }
+
+    &.trash {
+      background-color: $borderDark;
+    }
+
+    .fa-check,
+    .fa-trash {
+      pointer-events: none;
+      color: $fontDark;
+    }
+  }
+}
