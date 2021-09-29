@@ -14,6 +14,7 @@ const App = () => {
 
   useEffect(() => {
     filterHandler();
+    saveListLocalStorageHandler();
   }, [listItems, itemStatus]);
 
   const filterHandler = () => {
@@ -29,6 +30,15 @@ const App = () => {
       default:
         setFilteredListItems(listItems);
         break;
+    }
+  };
+
+  // Local storage
+  const saveListLocalStorageHandler = () => {
+    if (localStorage.getItem('listItems') === null) {
+      localStorage.setItem('listItems', JSON.stringify([]));
+    } else {
+      localStorage.setItem('listItems', JSON.stringify(listItems));
     }
   };
 
