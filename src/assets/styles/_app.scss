@@ -1,0 +1,10 @@
+.app {
+  header {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    font-size: $fontLg;
+    color: $fontHeadinglight;
+  }
+}

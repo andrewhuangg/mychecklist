@@ -1,8 +1,11 @@
 // Abstracts
-@import './mixins';
-@import './variables';
+@import 'mixins';
+@import 'variables';
 
 // Base
-@import './globals';
+@import 'globals';
 
 // Components
+@import 'app';
+@import 'form';
+@import 'checklist';

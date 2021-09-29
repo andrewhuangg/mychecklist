@@ -1,0 +1,31 @@
+.form {
+  height: 200px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  &__cta,
+  &__input {
+    padding: 0.5rem;
+    font-size: $fontLg;
+    border: 1px solid hsl(224, 13%, 76%);
+    border-radius: 10px;
+    background-color: $blockLight;
+  }
+
+  &__cta {
+    color: $fontLight;
+    background-color: $buttonLight;
+    cursor: pointer;
+  }
+
+  .fa-plus-square {
+  }
+
+  &__select {
+  }
+
+  &__filter {
+  }
+}
