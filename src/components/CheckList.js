@@ -1,11 +1,11 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-const CheckList = ({ listItems, setListItem }) => {
+const CheckList = ({ listItems, setListItem, filteredListItems }) => {
   const checkListItems = () => {
     return (
       <>
-        {listItems.map((item) => {
+        {filteredListItems.map((item) => {
           return (
             <ListItem
               text={item.text}
