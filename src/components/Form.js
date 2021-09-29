@@ -1,10 +1,20 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
-const Form = () => {
+const Form = ({ setListInput, setListItem, listItems, listInput }) => {
+  const listInputHandler = (e) => {
+    setListInput(e.target.value);
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setListItem([...listItems, { text: listInput, completed: false, id: uuidv4() }]);
+  };
+
   return (
     <form className='form'>
-      <input type='text' className='form__input' />
-      <button type='submit' className='form__cta'>
+      <input type='text' className='form__input' onChange={listInputHandler} />
+      <button type='submit' className='form__cta' onClick={submitHandler}>
         <i className='fas fa-plus-square' />
       </button>
       <div className='form__select'>

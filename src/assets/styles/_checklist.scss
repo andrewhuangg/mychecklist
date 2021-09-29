@@ -1,0 +1,9 @@
+.checklist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__ul {
+    width: 300px;
+  }
+}

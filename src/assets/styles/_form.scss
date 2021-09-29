@@ -1,7 +1,6 @@
 .form {
   height: 200px;
   display: flex;
-  flex-flow: column;
   justify-content: center;
   align-items: center;
 
@@ -10,17 +9,25 @@
     padding: 0.5rem;
     font-size: $fontLg;
     border: 1px solid hsl(224, 13%, 76%);
-    border-radius: 10px;
     background-color: $blockLight;
   }
 
   &__cta {
+    padding: 0;
+    border: 0;
     color: $fontLight;
     background-color: $buttonLight;
     cursor: pointer;
-  }
 
-  .fa-plus-square {
+    .fa-plus-square {
+      padding: 5px 6px;
+      font-size: 2rem;
+      color: $fontDark;
+    }
+
+    &:hover {
+      background-color: $borderLight;
+    }
   }
 
   &__select {
