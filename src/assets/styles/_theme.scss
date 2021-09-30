@@ -1,0 +1,107 @@
+.theme {
+  width: 50px;
+  height: 50px;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: $mainLight;
+  background-color: $mainDark;
+  border-radius: 50%;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.theme::before {
+  content: '\f186';
+  font-family: 'fontAwesome';
+}
+
+.dark {
+  // body
+  background-color: $mainDark;
+  color: $fontDark;
+
+  .theme {
+    color: $mainDark;
+    background-color: $mainLight;
+  }
+
+  .theme::before {
+    content: '\f185';
+    font-family: 'fontAwesome';
+  }
+
+  .app {
+    header {
+      color: $fontHeadingDark;
+    }
+  }
+
+  .form {
+    &__cta {
+      color: $fontDark;
+      background-color: $buttonDark;
+
+      .fa-plus-square {
+        color: $fontLight;
+      }
+
+      &:hover {
+        background-color: $borderDark;
+      }
+    }
+
+    &__input {
+      background-color: $blockDark;
+      color: $fontDark;
+    }
+
+    &__select {
+      &::after {
+        color: $fontLight;
+        background-color: $buttonDark;
+      }
+
+      select {
+        color: $fontDark;
+        background-color: $blockDark;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .listitem {
+    color: $fontDark;
+    background-color: $blockDark;
+    border: 1px solid $borderDark;
+    transition: all 200ms ease-in-out;
+
+    &--completed {
+      border: 1px solid $blockDark;
+    }
+
+    &__cta {
+      color: $fontDark;
+      background-color: $buttonDark;
+      transition: all 200ms ease-in-out;
+
+      &.complete {
+        background: $buttonDark;
+      }
+
+      &.trash {
+        background-color: $borderDark;
+      }
+
+      .fa-check,
+      .fa-trash {
+        color: $fontLight;
+      }
+    }
+  }
+}

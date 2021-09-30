@@ -6,16 +6,19 @@
   color: $fontLight;
   background-color: $blockLight;
   font-size: $fontSm;
-  transition: all 300s ease-in-out;
   border: 1px solid $borderLight;
+  transition: all 200ms ease-in-out;
 
   &--completed {
-    border: none;
+    border: 1px solid $blockLight;
   }
 
   &__li {
     padding: 0 0.5rem;
     flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     &--completed {
       text-decoration: line-through;
@@ -30,14 +33,21 @@
     border: none;
     background-color: $buttonLight;
     cursor: pointer;
+    transition: all 200ms ease-in-out;
 
     &.complete {
-      margin-right: 1px;
       background: $buttonDark;
     }
 
     &.trash {
       background-color: $borderDark;
+    }
+
+    &.complete,
+    &.trash {
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     .fa-check,

@@ -11,6 +11,7 @@ const App = () => {
   const [listItems, setListItem] = useState([]);
   const [itemStatus, setItemStatus] = useState('all');
   const [filteredListItems, setFilteredListItems] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   // * run once on load
   useEffect(() => {
@@ -35,6 +36,18 @@ const App = () => {
       default:
         setFilteredListItems(listItems);
         break;
+    }
+  };
+
+  // Theme Handler
+  const handleDarkMode = (e) => {
+    e.preventDefault();
+    setIsDarkMode((prevMode) => !prevMode);
+    const body = document.querySelector('body');
+    if (!isDarkMode) {
+      body.classList.add('dark');
+    } else {
+      body.classList.remove('dark');
     }
   };
 
@@ -64,6 +77,7 @@ const App = () => {
           listItems={listItems}
           listInput={listInput}
           setItemStatus={setItemStatus}
+          handleDarkMode={handleDarkMode}
         />
         <CheckList
           listItems={listItems}

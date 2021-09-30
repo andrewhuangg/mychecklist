@@ -8,8 +8,20 @@
   &__input {
     padding: 0.5rem;
     font-size: $fontLg;
-    border: 1px solid hsl(224, 13%, 76%);
-    background-color: $blockLight;
+    border: none;
+  }
+
+  &__input,
+  &__filter {
+    height: 49px;
+  }
+
+  &__input {
+    width: 500px;
+    font-size: $fontMd;
+    &:focus {
+      outline: none;
+    }
   }
 
   &__cta {
@@ -18,21 +30,47 @@
     color: $fontLight;
     background-color: $buttonLight;
     cursor: pointer;
+    transition: all 200ms ease-in-out;
 
     .fa-plus-square {
-      padding: 5px 6px;
+      padding: 0.5rem;
       font-size: 2rem;
       color: $fontDark;
     }
 
     &:hover {
       background-color: $borderLight;
+      transform: scale(1.1);
     }
   }
 
   &__select {
+    margin-left: 1rem;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '\25BC';
+      padding: 0.25rem 0.5rem;
+      top: 0;
+      right: 0;
+      position: absolute;
+      color: $fontDark;
+      font-size: 2rem;
+      background-color: $buttonLight;
+      cursor: pointer;
+      pointer-events: none;
+    }
+
+    select {
+      border: 0;
+      color: $fontLight;
+      cursor: pointer;
+      width: 12rem;
+    }
   }
 
   &__filter {
+    font-size: $fontMd;
   }
 }
