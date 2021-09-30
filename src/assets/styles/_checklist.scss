@@ -1,10 +1,19 @@
 .checklist {
   width: 100%;
+  margin-bottom: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
   &__ul {
     width: 60%;
+
+    @include breakpoint-down(smedium) {
+      width: 85%;
+    }
+
+    @include breakpoint-down(small) {
+      width: 80%;
+    }
   }
 }

@@ -9,6 +9,15 @@
   border: 1px solid $borderLight;
   transition: all 200ms ease-in-out;
 
+  @include breakpoint-down(smedium) {
+    font-size: $fontMd;
+    margin: 1rem 0;
+  }
+
+  @include breakpoint-down(small) {
+    margin: 0.75rem 0;
+  }
+
   &--completed {
     border: 1px solid $blockLight;
   }
@@ -34,6 +43,10 @@
     background-color: $buttonLight;
     cursor: pointer;
     transition: all 200ms ease-in-out;
+
+    @include breakpoint-down(small) {
+      font-size: $fontLg;
+    }
 
     &.complete {
       background: $buttonDark;

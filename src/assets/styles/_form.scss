@@ -4,23 +4,60 @@
   justify-content: center;
   align-items: center;
 
+  @include breakpoint-down(smedium) {
+    height: 175px;
+  }
+
+  @include breakpoint-down(small) {
+    flex-flow: column;
+    margin: 1rem 0 1rem 0;
+  }
+
+  &__info-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    @include breakpoint-down(small) {
+      margin: 1rem 0 1rem 0;
+    }
+  }
+
   &__cta,
   &__input {
     padding: 0.5rem;
     font-size: $fontLg;
     border: none;
+
+    @include breakpoint-down(small) {
+      font-size: $fontSm;
+    }
   }
 
   &__input,
   &__filter {
     height: 49px;
+
+    @include breakpoint-down(small) {
+      height: 30px;
+    }
   }
 
   &__input {
     width: 500px;
     font-size: $fontMd;
+
     &:focus {
       outline: none;
+    }
+
+    @include breakpoint-down(smedium) {
+      width: 400px;
+      font-size: $fontSm;
+    }
+
+    @include breakpoint-down(small) {
+      width: 300px;
     }
   }
 
@@ -36,6 +73,10 @@
       padding: 0.5rem;
       font-size: 2rem;
       color: $fontDark;
+
+      @include breakpoint-down(small) {
+        font-size: $fontMd;
+      }
     }
 
     &:hover {
@@ -60,6 +101,11 @@
       background-color: $buttonLight;
       cursor: pointer;
       pointer-events: none;
+
+      @include breakpoint-down(small) {
+        padding: 0.25rem 0.45rem;
+        font-size: $fontMd;
+      }
     }
 
     select {
@@ -67,10 +113,22 @@
       color: $fontLight;
       cursor: pointer;
       width: 12rem;
+
+      @include breakpoint-down(smedium) {
+        width: 10rem;
+      }
+
+      @include breakpoint-down(small) {
+        width: 15rem;
+      }
     }
   }
 
   &__filter {
     font-size: $fontMd;
+
+    @include breakpoint-down(small) {
+      font-size: $fontLg;
+    }
   }
 }

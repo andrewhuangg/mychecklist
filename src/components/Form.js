@@ -26,10 +26,17 @@ const Form = ({
   return (
     <>
       <form className='form'>
-        <input type='text' className='form__input' onChange={listInputHandler} value={listInput} />
-        <button type='submit' className='form__cta' onClick={submitHandler}>
-          <i className='fas fa-plus-square' />
-        </button>
+        <div className='form__info-wrapper'>
+          <input
+            type='text'
+            className='form__input'
+            onChange={listInputHandler}
+            value={listInput}
+          />
+          <button type='submit' className='form__cta' onClick={submitHandler}>
+            <i className='fas fa-plus-square' />
+          </button>
+        </div>
         <div className='form__select'>
           <select name='checklists' className='form__filter' onChange={setItemStatusHandler}>
             <option value='all'>all</option>

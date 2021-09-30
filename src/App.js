@@ -69,7 +69,7 @@ const App = () => {
     <>
       <div className='app'>
         <header>
-          <h1>CheckList</h1>
+          <h1>My CheckList</h1>
         </header>
         <Form
           setListInput={setListInput}
